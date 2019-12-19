@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css?family=Heebo&display=swap:400,700");
+* {
+  box-sizing: border-box;
+}
+body, html {
+
+  height: 100%;
+}
+/* mise en page du body */
+body {
+
+  background-color: #fafaff;
+
+}
+
+#western{
+
+  font-family: "Heebo", sans-serif;
+  color: #111111;
+  font-size: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  text-align: left;
+  position: relative;
+
+}
+
+/* liste */
+ul.liste {
+  list-style: none;
+  float: right;
+  margin-right: 500px  ;
+  margin-top: 150px;
+
+
+
+}
+
+/* cercle*/
+#cercle{
+  display: block;
+  background: #7a240c;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  margin: 0;
+  margin-left: 200px;
+  margin-top: 100px;
+
+
+}
+
+/* bouton nom et couleur*/
+button {
+  border: none;
+  border-radius: inherit;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  border-width: 0;
+  padding: 0;
+}
+/*position du bouton*/
+a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  color : black;
+  outline-color: #fafaff;
+
+
+
+}
+
+
+.div {
+  padding-top: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-around;
+  text-align: left;
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.flex-1 {
+  flex: 1;
+  min-width: 250px;
+  margin: 0 auto 5px;
+}
+
+.button {
+  padding: 1rem 5rem;
+  background: #fafaff;
+  text-align: left;
+  display: inline-block;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 90;
+  position: relative;
+  will-change: transform;
+
+
+}
+
+.button-mat {
+  color: black;
+  border: 0px ;
+  border-radius: 0.3rem;
+  transition: 0.3s ease-in-out;
+  transition-delay: 0.35s;
+  overflow: hidden;
+}
+.button-mat:before {
+  content: "";
+  display: block;
+  background: #fafaff;
+  position: absolute;
+  width: 200%;
+  height: 500%;
+  border-radius: 100%;
+  transition: 0.36s cubic-bezier(0.4, 0, 1, 1);
+}
+.button-mat:hover .psuedo-text {
+  color: #fafaff;
+}
+.button-mat:hover {
+  color: #fafaff;
+}
+
+.btn-1 {
+  letter-spacing: 0.05rem;
+  transition: 0.5s all ease-in-out;
+  position: relative;
+  background:#fafaff;
+
+}
+.btn-1:before {
+  border-top: 0.1rem solid #cf5225;
+  border-bottom: 0.1rem solid #cf5225;
+  display: block;
+  position: absolute;
+  background: transparent;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  right: 100%;
+  transition: 0.48s all ease-in-out;
+}
+.btn-1:hover {
+  letter-spacing: 0.4rem;
+}
+.btn-1:hover:before {
+  left: 25%;
+  right:25%;
+}
