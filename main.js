@@ -35,3 +35,70 @@ function typewriter()
 
 
 typewriter();
+
+// requette https// Création d'une requête HTTP
+var req = new XMLHttpRequest();
+// Requête HTTP GET synchrone vers le fichier langages.txt publié localement
+req.open("GET", "http://localhost/javascript-web-srv/data/langages.txt", false);
+// Envoi de la requête
+req.send(null);
+// Affiche la réponse reçue pour la requête
+console.log(req.responseText);
+
+var req = new XMLHttpRequest();
+// La requête est asynchrone lorsque le 3ème paramètre vaut true ou est absent
+req.open("GET", "http://localhost/javascript-web-srv/data/langages.txt");
+// Gestion de l'événement indiquant la fin de la requête
+req.addEventListener("load", function () {
+    // Affiche la réponse reçue pour la requête
+    console.log(req.responseText);
+});
+req.send(null);
+
+
+// API
+
+
+async function test(){
+  const response = await fetch('https://api.tronalddump.io/random/quote');
+  const myJson = await response.json();
+  console.log(response, myJson);
+
+  myJson.quotes.forEach(function(e){
+    var quotes = document.getElementById('quotes');
+    var trackName = e.name;
+    var size = e.size;
+    var title = document.createElement("div");
+    title.innerHTML = name;
+    if (e.img){
+      title.style.background = `no-repeat url(${e.img}) center/100%`
+    }
+    title.classList.add(size);
+    quotes.appendChild(title);
+    console.log(e.name);
+  });
+}
+
+
+
+
+test();
+
+
+request.open('GET', 'https://api.tronalddump.io/random/quote',true);
+request.send();
+/*ajaxGet("https://api.tronalddump.io/random/quote", function (reponse) {
+    console.log(reponse);
+});
+
+var citationsElt = document.getElementById("quotess");
+ajaxGet("https://api.tronalddump.io/random/quote", function (reponse) {
+    // Transforme la réponse en un tableau d'articles
+    var quotes = JSON.parse(reponse);
+    quotes.forEach(function (quote) {
+        // Ajout contenu de chaque citation
+        var contenuElt = document.createElement("p");
+        contenuElt.textContent = quotes.contenu;
+        quotesElt.appendChild(contenuElt);
+    });
+});*/
