@@ -58,7 +58,14 @@ req.send(null);
 
 // API
 
+fetch('https://api.tronalddump.io/random/quote')
+        .then(response => {
+          response.json().then((quotes)=>{
+            console.log(quotes);
+          })
+        })
 
+/*
 async function test(){
   const response = await fetch('https://api.tronalddump.io/random/quote');
   const myJson = await response.json();
@@ -87,7 +94,7 @@ test();
 
 request.open('GET', 'https://api.tronalddump.io/random/quote',true);
 request.send();
-/*ajaxGet("https://api.tronalddump.io/random/quote", function (reponse) {
+ajaxGet("https://api.tronalddump.io/random/quote", function (reponse) {
     console.log(reponse);
 });
 

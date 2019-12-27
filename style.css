@@ -9,7 +9,7 @@ body {
     font-size: 25PX;
     letter-spacing: 4px;
     font-weight: bold;
-    position: relative;
+
 
 
 
@@ -39,19 +39,78 @@ h1.titre{
   justify-content: center;
   height: 150px;
   position: relative;
+  z-index: 7;
 
 
 
 }
 
+#images{
 
+  position: relative;
+  display: block;
+  align-content: center;
+  justify-content: center;
 
-img.tv{
+}
+
+img.carte2, .carte3, .carte4, .carte1{
+  text-align: center;
+  position: absolute;
+  vertical-align: middle;
+
+}
+
+img.carte4{
+  width: 110vw;
+  text-align: center;
+  top: -200px;
+  display: block;
+  align-content: center;
+  justify-content: center;
+  z-index: 1;
+
+}
+
+img.carte3{
+  width: 100vw;
+  text-align: center;
+  top: -150px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+img.carte2{
+  width: 90vw;
+  text-align: center;
+  top: -120px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  z-index: 3;
+
+}
+img.carte1{
+  width: 80vw;
+  text-align: center;
+  top: -100px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-left: 50;
+  z-index: 4;
+
+}
+
+.tv{
 
   vertical-align: middle;
   width: 40vw;
   position: relative;
   top: -70px;
+  z-index: 5;
 
 
 }
@@ -67,6 +126,11 @@ footer{
 
   height:50px;
 
+  z-index: 6;
+
 }
 
 /* citation effet : https://codepen.io/gavra/pen/tEpzn texte */
+
+
+/*FORM basique qu'iol faudrait lier à une autre page ou alors en trouver un autre à utiliser avec l'API*/
