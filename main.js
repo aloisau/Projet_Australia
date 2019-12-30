@@ -1,7 +1,5 @@
-// inspiration : effet texte citation par gavra
-var aText = new Array(
-'"Donald Trump super citation !"'
-);
+// inspiration : effet texte citation par gavra // pour afficher citations
+var aText = new Array (quotes); // noter citations entre parenthèse
 var iSpeed = 100; // délai d'impression
 var iIndex = 0; // position de départ
 var iArrLength = aText[0].length; // longueur du tableau de texte
@@ -35,7 +33,7 @@ function typewriter()
 
 
 typewriter();
-
+/*
 // requette https// Création d'une requête HTTP
 var req = new XMLHttpRequest();
 // Requête HTTP GET synchrone vers le fichier langages.txt publié localement
@@ -54,9 +52,9 @@ req.addEventListener("load", function () {
     console.log(req.responseText);
 });
 req.send(null);
+*/
 
-
-// API
+// API --> Ça ne fonctionne pas !
 
 fetch('https://api.tronalddump.io/random/quote')
         .then(response => {
@@ -64,6 +62,39 @@ fetch('https://api.tronalddump.io/random/quote')
             console.log(quotes);
           })
         })
+
+  async function quotes(){
+    /*const response = await fetch('https://planets-api-webimac2019.now.sh/');
+    const myJson = await response.json();
+    console.log(response, myJson);*/
+    fetch('https://api.tronalddump.io/random/quote')
+            .then(response => {
+              response.json().then((quotes)=>{
+                console.log(quotes);
+              })
+            })
+
+
+
+          myJson.quotes.forEach(function(e){
+            var quotes = document.getElementById('quotes');
+            var trackName = e.name;
+            var size = e.size;
+            var title = document.createElement("div");
+            title.innerHTML = name;
+            if (e.img){
+              title.style.background = `no-repeat url(${e.img}) center/100%`
+            }
+            title.classList.add(size);
+            quotes.appendChild(title);
+            console.log(e.name);
+          });
+        }
+
+
+
+
+        quotes();
 
 /*
 async function test(){
