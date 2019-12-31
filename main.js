@@ -1,5 +1,40 @@
+//API TEST
+var footer = document.getElementById('typedtext');
+
+function fetchFooter(){
+
+  fetch('https://api.tronalddump.io/random/quote')
+          .then(response => {
+            response.json().then((typedtext)=>{
+              console.log(typedtext);
+            })
+          })
+  //try{
+    //fetch('https://api.tronalddump.io/random/quote')
+    //.then(response => response.text())
+  //  .then(data => {
+  //  footer.innerHTML = data;
+    //})
+  //} catch {
+  //  console.log("erreur");
+//  }
+//}
+
+
+fetchFooter();
+
+
+
+
+
+
+
+
+
+
+
 // inspiration : effet texte citation par gavra // pour afficher citations
-var aText = new Array (quotes); // noter citations entre parenthèse
+var aText = new Array (fetchFooter()); // noter citations entre parenthèse
 var iSpeed = 100; // délai d'impression
 var iIndex = 0; // position de départ
 var iArrLength = aText[0].length; // longueur du tableau de texte
@@ -54,9 +89,34 @@ req.addEventListener("load", function () {
 req.send(null);
 */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // API --> Ça ne fonctionne pas !
 
-fetch('https://api.tronalddump.io/random/quote')
+/*fetch('https://api.tronalddump.io/random/quote')
         .then(response => {
           response.json().then((quotes)=>{
             console.log(quotes);
@@ -66,7 +126,7 @@ fetch('https://api.tronalddump.io/random/quote')
   async function quotes(){
     /*const response = await fetch('https://planets-api-webimac2019.now.sh/');
     const myJson = await response.json();
-    console.log(response, myJson);*/
+    console.log(response, myJson);
     fetch('https://api.tronalddump.io/random/quote')
             .then(response => {
               response.json().then((quotes)=>{
@@ -96,7 +156,7 @@ fetch('https://api.tronalddump.io/random/quote')
 
         quotes();
 
-/*
+
 async function test(){
   const response = await fetch('https://api.tronalddump.io/random/quote');
   const myJson = await response.json();
@@ -139,4 +199,5 @@ ajaxGet("https://api.tronalddump.io/random/quote", function (reponse) {
         contenuElt.textContent = quotes.contenu;
         quotesElt.appendChild(contenuElt);
     });
-});*/
+});
+*/
