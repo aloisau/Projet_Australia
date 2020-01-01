@@ -47,6 +47,11 @@ h2.titre{
 
 
 }
+#quotes{
+  font-weight: normal;
+    text-align: justify;
+  z-index: 8;
+}
 
 #images{
   //position: relative;
@@ -59,7 +64,7 @@ h2.titre{
 
 }
 
-img.carte2, .carte3, .carte4, .carte1{
+img.carte2, .carte3, .carte4, .carte1, #quotes{
   margin: auto;
   text-align: center;
   position: absolute;
@@ -117,6 +122,9 @@ img.carte1{
 
 }
 
+
+
+/*
 footer{
   position:absolute;
 
@@ -132,7 +140,7 @@ footer{
 
 }
 
-/* citation effet : https://codepen.io/gavra/pen/tEpzn texte */
+ citation effet : https://codepen.io/gavra/pen/tEpzn texte */
 
 
 /*FORM basique qu'iol faudrait lier à une autre page ou alors en trouver un autre à utiliser avec l'API*/
