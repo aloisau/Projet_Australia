@@ -3,13 +3,14 @@
     <head>
         <meta charset="utf-8 /">
         <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Heebo&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+
         <title>Tronal.Dump</title>
         <script src="https://kit.fontawesome.com/e210289bdc.js" crossorigin="anonymous"></script>
         <meta name="viewport" content="width=device-width,
         initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Heebo&display=swap:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap:400,700" rel="stylesheet">
 
     </head>
 
@@ -19,20 +20,11 @@
 
 
 
-
-
-       <section classe = buttons>
-           <div class="options">
-               <ul id="ul">
-                  <li id="yes0" onclick="button(this)"></li>
-                  <li id="no1" onclick="button(this)"></li>
-               </ul>
-          </div>
+<!-- Boutons  -->
 
 
 
-       </section>
-
+<!-- images cartes  et citations-->
       <section id ="images">
 
           <img class="carte4" alt="carteUSA4" src="img/Carte_Bleu4_Trump.png">
@@ -49,11 +41,37 @@
       </section>
 
 
+      <section classe = buttons>
+         <div class="options">
+               <ul id="ul">
+                    <!--    <li id="yes0" onclick="button(this)"></li>
+                        <li id="no1" onclick="button(this)"></li> -->
+               </ul>
+        </div>
 
-        <footer>
-          <div class="next">
-              <button class="button" onclick="next()" id="button">Start again !</button>
+
+
+             </section>
+<!-- Formulaire -->
+      <div class="wrapper">
+        <h6 id = "h5">Add your own quote to the game!</h6>
+        <div id="error_message">
+
+        </div>
+        <form action="/quotes" method="POST" id="myform" onsubmit = "return validate();">
+          <div class="input_field">
+              <input type="text" placeholder="Quote" id="quote">
           </div>
+          <button type="button" id="button">Start again !</button>
+        </form>
+      </div>
+
+<!-- Bouton start again -->
+        <footer>
+        <!--  <div class="next">
+              <button class="button" onclick="next()" id="button">Start again !</button>
+          </div>-->
+          <div id="nextButton"></div>
 
         </footer>
 

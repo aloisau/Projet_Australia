@@ -1,11 +1,11 @@
-
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 /* mise en page du body et h1*/
 body {
     background-color: #dff4f4;
-    margin: 10px 10px;
+    margin: 30px 10px;
     padding: 0px;
     text-align: center;
-    font-family: "Heebo", sans-serif;
+    font-family: "Josefin Sans", sans-serif;
     font-size: 25PX;
     letter-spacing: 4px;
     font-weight: bold;
@@ -31,7 +31,7 @@ body {
 }
 /* effet titre https://codepen.io/gavra/pen/tEpzn*/
 h2#typedtext{
-  font-family: "Heebo", sans-serif; // police
+  font-family: "Josefin Sans", sans-serif; // police
   font-size: 40px;
   color: #111111;
   display: flex;
@@ -46,30 +46,18 @@ h2#typedtext{
 }
 
 
-/*.button{
-position: absolute;
-display: inline-block;
-background-color : #B7DCE1;
-width: 20%;
-padding: 17px;
-border-radius:18px;
-font-size: 20px;
-color:#ffffff;
-box-shadow: 0px 2px 0px #B7DCE1;
-cursor: pointer;
-outline: none;
-text-align: center;
-  z-index: 10;
-}*/
 
 #images{
   position: relative;
+
   display: flex;
   align-content: center;
   align-items: center;
   justify-content: center;
+  top: 80px;
   height: auto;
   width: 100vw;
+
 
 }
 
@@ -111,7 +99,7 @@ img.carte2{
 
 }
 img.carte1{
-  width: 80vw;
+  width: 70vw;
   //top: -100px;
   display: flex;
   align-content: center;
@@ -121,42 +109,57 @@ img.carte1{
 
 }
 
-.tv {
-  vertical-align: middle;
-  width: 40vw;
-  position: absolute;
-  top: -25px;
-  z-index: 5;
+#images{
+  -webkit-animation: 3s ease 0s normal forwards 1 fadein;
+  animation: 3s ease 0s normal forwards 1 fadein;
+}
+
+@keyframes fadein{
+  0%{opacity: 0;}
+  66%{opacity:0,5;}
+  100%{opacity: 1;}
+
+}
+
+@-webkit-keyframes fadein{
+  0%{opacity: 0;}
+  66%{opacity:0,5;}
+  100%{opacity: 1;}
+
 }
 
 /* Quiz */
 
 .buttons .options{
-  float: center;
+  float: left;
   width: 100%;
 }
 
 .options ul{
   list-style: none;
-  padding: 5px 5px;
+  padding: 0px;
   display: flex;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
+  align-content: flex-end;
+  justify-content: flex-end;
   justify-content:  space-around;
   flex-wrap: wrap;
 }
 
 .options ul li{
   display: inline-block;
-  background-color:#143B64;
+  background: rgb(6,74,111);
+  background: -moz-linear-gradient(0deg, rgba(6,74,111,0.8645833333333334) 0%, rgba(24,36,79,1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(6,74,111,0.8645833333333334) 0%, rgba(24,36,79,1) 100%);
+  background: linear-gradient(0deg, rgba(6,74,111,0.8645833333333334) 0%, rgba(24,36,79,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#064a6f",endColorstr="#18244f",GradientType=1);
+  ox-shadow: 0px 0px 0px #143B64;
   width: 30%;
   padding: 9px;
   border-radius:18px;
-  margin-top: 40px;
+  margin-top: 120px;
   font-size: 25px;
   color:#ffffff;
-  box-shadow: 0px 2px 1px #143B64;
+
   cursor: pointer;
   outline: none;
   text-align: center;
@@ -175,10 +178,11 @@ img.carte1{
   margin:50px auto;
   border-radius: 8px;
   //padding: 20px;
-  z-index :8 ;
+  z-index :100 ;
   margin: auto;
   text-align: center;
   vertical-align: middle;
+  //background-color: white;
 
 }
 
@@ -195,17 +199,11 @@ img.carte1{
   vertical-align: middle;
 }
 
-.tv {
-  margin: auto;
-  text-align: center;
-  vertical-align: middle;
-
-}
 
 footer{
   position:absolute;
 
-  bottom:30px;
+  bottom:100px;
 
   width:100%;
 
@@ -280,7 +278,7 @@ a {
   }
 }
 /* les deux boules animées*/
-.button {
+#button1 {
   position: relative;
   letter-spacing: 0.20em;
   margin: 0 auto;
@@ -296,7 +294,7 @@ a {
   text-align: center;
 
 }
-.button::after, .button::before {
+#button1::after, #button1::before {
   content: "";
   position: absolute;
   height: 40%;
@@ -305,24 +303,24 @@ a {
   z-index: -2;
   border-radius: 50%;
 }
-.button::before {
+#button1::before {
   background-color: #255993;
   top: -0.75rem;
   left: 0.5rem;
   -webkit-animation: top 7s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
           animation: top 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
 }
-.button::after {
+#button1::after {
   background-color: #1D3667;
   top: 3rem;
   left: 13rem;
   -webkit-animation: bottom 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
           animation: bottom 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
 }
-.button:hover {
+#button1:hover {
   color: white;
 }
-.button:hover::before, .button:hover::after {
+#button1:hover::before, #button1:hover::after {
   top: 0;
   height: 100%;
   width: 100%;
@@ -330,16 +328,638 @@ a {
   -webkit-animation: none;
           animation: none;
 }
-.button:hover::after {
+#button1:hover::after {
   left: 0rem;
 }
-.button:hover::before {
+#button1:hover::before {
   top: 0.5rem;
   left: 0.35rem;
 }
 
-@@media query (max-width: 768){
+/* Formulaire*/
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+
+
+.wrapper{
+  position: absolute;
+  top: 60%;
+  left: 85%;
+  transform: translate(-50%,-50%);
+  max-width: 250px;
+  width: 100%;
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 2px rgb(169, 234, 254);
+  z-index: 25;
+}
+
+.wrapper h6{
+  text-align: center;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #332902;
+}
+
+.wrapper .input_field{
+  margin-bottom: 10px;
+}
+
+.wrapper .input_field input[type="text"],
+.wrapper textarea{
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  padding: 10px;
+}
+
+.wrapper textarea{
+  resize: none;
+  height: 80px;
+}
+
+.wrapper .btn input[type="submit"]{
+  border: none;
+  border-color: none;
+  margin-top: 15px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  background: #fece0c;
+  color: #332902;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#error_message{
+  margin-bottom: 20px;
+  background: #fe8b8e;
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
+}
+
+
+
+
+
+
+/* 768 Ipad vertical*/
+@media screen and (max-width: 768px){
+  body {
+    background-color: #dff4f4;
+    margin: 10px 10px;
+    padding: 0px;
+    text-align: center;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: bold;
+    overflow-x: hidden;
+      font-size: 25px;
+      letter-spacing: 3px;
+
+  }
+
+
+  #citations{display: flex;
+  }
+  #container{
+    top:-15%;
+    width: 100vw;
+    height : 100vh;
+    margin: 0 auto;
+    text-align: center;
+}
+
+  /* effet titre https://codepen.io/gavra/pen/tEpzn*/
+  h2#typedtext{
+
+    font-family: "Josefin Sans", sans-serif; // police
+    font-size: 50px !important;
+    color: #111111;
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: center;
+    height: 40px;
+    position: relative;
+
+
+    z-index: 6;
+
+  }
+
+  #images{
+
+    top: 85px
+  }
+
+  img.carte4{
+    width: 120vw;
+    //top: -200px;
+
+  }
+
+  img.carte3{
+    width: 110vw;
+    //top: -150px;
+
+  }
+
+  img.carte2{
+    width: 100vw;
+    //top: -120px;
+
+
+  }
+  img.carte1{
+    width: 90vw;
+    //top: -100px;
+
+  }
+
+
+  /* Quiz */
+
+  .options ul li{
+
+    background: rgb(31,106,125);
+    background: -moz-linear-gradient(0deg, rgba(31,106,125,1) 0%, rgba(10,85,110,1) 27%, rgba(21,36,80,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(31,106,125,1) 0%, rgba(10,85,110,1) 27%, rgba(21,36,80,1) 100%);
+    background: linear-gradient(0deg, rgba(31,106,125,1) 0%, rgba(10,85,110,1) 27%, rgba(21,36,80,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1f6a7d",endColorstr="#152450",GradientType=1);
+    margin-top: 130px;
+    box-shadow: 0px 0px 0px #143B64;
+  }
+
+  #quotes-wrapper{
+
+    height: 380px;
+    width: 450px;
+  }
+
+  footer{
+    position:absolute;
+    bottom:100px;
+
+  }
+
+  /*Bouton d'action (start again !)*/
+
+  .button::before {
+    background-color: #1f6a7d;
+  }
+  .button::after {
+    background-color: #152450;
+
+  }
+
+
+
+
+}
+
+/* 414 Iphone 6+ vertical */
+@media screen and (max-width: 414px) {
+
+  body {
+    background-color: #dff4f4;
+    margin: 10px 10px;
+    padding: 0px;
+    text-align: center;
+
+    overflow-x: hidden;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 15PX;
+    letter-spacing: 2px;
+    font-weight: normal;
+    overflow-x: hidden;
+
+
+  }
+
+  #container{
+    top:-15%;
+    width: 100vw;
+    height : 100vh;
+    margin: 0 auto;
+    text-align: center;
+}
+
+  /* effet titre https://codepen.io/gavra/pen/tEpzn*/
+  h2#typedtext{
+
+      font-family: "Josefin Sans", sans-serif; // police
+      font-size: 20px;
+      color: #111111;
+      display: flex;
+      align-items: flex-start;
+      align-content: center;
+      justify-content: center;
+      height: 40px;
+      position: relative;
+
+      z-index: 6;
+
+  }
+
+  #images{
+    position: relative;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 100vw;
+    top : -40px;
+
+  }
+
+  img.carte2, .carte3, .carte4, .carte1{
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    vertical-align: middle;
+    width: 100vw;
+
+  }
+
+  img.carte4{
+    width: 110vw;
+    //top: -200px;
+    display: block;
+    align-content: flex-start;
+    justify-content: center;
+    z-index: 1;
+
+  }
+
+  img.carte3{
+    width: 100vw;
+    //top: -150px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  img.carte2{
+    width: 90vw;
+    //top: -120px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    z-index: 3;
+
+  }
+  img.carte1{
+    width: 75vw;
+    //top: -100px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-left: 50;
+    z-index: 4;
+
+  }
+  /* Quiz */
+
+  .buttons .options{
+    float: center;
+    width: 100%;
+  }
+
+  .options ul{
+    list-style: none;
+    padding: 5px 5px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-content:  space-around;
+    flex-wrap: wrap;
+  }
+
+  .options ul li{
+    display: inline-block;
+    background: rgb(42,140,167);
+background: -moz-linear-gradient(0deg, rgba(42,140,167,0.8645833333333334) 0%, rgba(14,37,105,1) 100%);
+background: -webkit-linear-gradient(0deg, rgba(42,140,167,0.8645833333333334) 0%, rgba(14,37,105,1) 100%);
+background: linear-gradient(0deg, rgba(42,140,167,0.8645833333333334) 0%, rgba(14,37,105,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2a8ca7",endColorstr="#0e2569",GradientType=1);
+    width: 30%;
+    padding: 9px;
+    border-radius:18px;
+    margin-top: 100px;
+    font-size: 15px;
+    color:#ffffff;
+
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    z-index: 9;
+  }
+
+
+
+  #quotes-wrapper{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 300px;
+    margin:50px auto;
+    border-radius: 8px;
+    //padding: 20px;
+    z-index :100 ;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+
+  }
+
+
+  footer{
+    position:absolute;
+
+    bottom:100px;
+
+    width:100%;
+
+    padding-top:50px;
+
+  }
+
+
+  /*Bouton d'action (start again !)*/
+
+  /* première étape pour l'animation, */
+
+  /* les deux boules animées*/
+  .button {
+    position: relative;
+    letter-spacing: 0.20em;
+    margin: 0 auto;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    outline: none;
+    font-size: 15px;
+    color: #111111;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
+    border: none;
+    z-index: 78;
+    display: inline-block;
+    text-align: center;
+
+  }
+
+  .button::before {
+    background-color: #152450;
+    top: -0.75rem;
+    left: 0.5rem;
+    -webkit-animation: top 7s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
+            animation: top 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
+  }
+  .button::after {
+    background-color: #2a8ca7;
+    top: 3rem;
+    left: 13rem;
+    -webkit-animation: bottom 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
+            animation: bottom 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
+
+
+}
+}
+
+/* 320 Iphone 5 vertical */
+@media screen and (max-width: 320px) {
+
+  body {
+    background-color: #dff4f4;
+    margin: 10px 10px;
+    padding: 0px;
+    text-align: center;
+
+    overflow-x: hidden;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 10PX;
+    letter-spacing: 1.5px;
+    font-weight: normal;
+    overflow-x: hidden;
+
+
+  }
+
+  #container{
+    top:-15%;
+    width: 100vw;
+    height : 100vh;
+    margin: 0 auto;
+    text-align: center;
+}
+
+  /* effet titre https://codepen.io/gavra/pen/tEpzn*/
+  h2#typedtext{
+
+
+    font-size: 17px;
+
+
+  }
+
+  #images{
+    position: relative;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 100vw;
+    top : -100px;
+}
+  /* Quiz */
+
+  .options ul{
+    list-style: none;
+    padding: 5px 5px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-content:  space-around;
+    flex-wrap: wrap;
+  }
+
+  .options ul li{
+    display: inline-block;
+    background: rgb(42,140,167);
+background: -moz-linear-gradient(0deg, rgba(42,140,167,0.8645833333333334) 0%, rgba(14,37,105,1) 100%);
+background: -webkit-linear-gradient(0deg, rgba(42,140,167,0.8645833333333334) 0%, rgba(14,37,105,1) 100%);
+background: linear-gradient(0deg, rgba(42,140,167,0.8645833333333334) 0%, rgba(14,37,105,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2a8ca7",endColorstr="#0e2569",GradientType=1);
+    width: 30%;
+    padding: 7px;
+    border-radius:18px;
+    margin-top: 70px;
+    font-size: 10px;
+    color:#ffffff;
+
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    z-index: 9;
+  }
+
+
+
+  #quotes-wrapper{
+
+    height: 400px;
+    width: 250px;
+
+
+  }
+
+
+  footer{
+
+    bottom:110px;
+
+    width:100%;
+
+    padding-top:50px;
+
+  }
+
+
+  /*Bouton d'action (start again !)*/
+
+  /* première étape pour l'animation, */
+
+  /* les deux boules animées*/
+  .button {
+    position: relative;
+    letter-spacing: 0.20em;
+    margin: 0 auto;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    outline: none;
+    font-size: 10px;
+    color: #111111;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
+    border: none;
+    z-index: 78;
+    display: inline-block;
+    text-align: center;
+
+  }
+  .button::after, .button::before {
+    content: "";
+    position: absolute;
+    height: 40%;
+    width: 10%;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: -2;
+    border-radius: 50%;
+  }
+
+  .button::before {
+    background-color: #152450;
+    top: -0.75rem;
+    left: 0.5rem;
+    -webkit-animation: top 7s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
+            animation: top 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
+  }
+  .button::after {
+    background-color: #2a8ca7;
+    top: 2rem;
+    left: 13;
+    -webkit-animation: bottom 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
+            animation: bottom 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
+
+
+    }
+    .button:hover {
+      color: white;
+    }
+    .button:hover::before, .button:hover::after {
+      top: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 18px;
+      -webkit-animation: none;
+          animation: none;
+      }
+      .button:hover::after {
+        left: 0rem;
+      }
+      .button:hover::before {
+        top: 0.5rem;
+        left: 0.35rem;
+      }
+}
+
+
+/* 1024 Ipad horizontal */
+@media screen and (max-width: 1024px) {
+
+
+  /* Quiz */
+
+  .buttons .options{
+    float: center;
+    width: 100%;
+  }
+
+  .options ul li{
+    display: inline-block;
+    background: rgb(6,74,111);
+    background: -moz-linear-gradient(0deg, rgba(6,74,111,0.8645833333333334) 0%, rgba(24,36,79,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(6,74,111,0.8645833333333334) 0%, rgba(24,36,79,1) 100%);
+    background: linear-gradient(0deg, rgba(6,74,111,0.8645833333333334) 0%, rgba(24,36,79,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#064a6f",endColorstr="#18244f",GradientType=1);
+    ox-shadow: 0px 0px 0px #143B64;
+
+  }
+
+
+
+
+  footer{
+
+
+    bottom:40px;
+
+
+  }
+
+  .button::before {
+    background-color: #18244f;
+    top: -0.75rem;
+    left: 0.5rem;
+    -webkit-animation: top 7s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
+            animation: top 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
+  }
+  .button::after {
+    background-color: #064a6f;
+    top: 3rem;
+    left: 13rem;
+    -webkit-animation: bottom 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
+            animation: bottom 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
+
+}
 }
 
 /*FORM basique qu'iol faudrait lier à une autre page ou alors en trouver un autre à utiliser avec l'API*/
