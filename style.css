@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
-/* mise en page du body et h1*/
+
+/* mise en page du body */
 body {
     background-color: #dff4f4;
     margin: 30px 10px;
@@ -14,29 +15,23 @@ body {
 
 }
 
-
-  #citations{display: flex;
-}
+#citations{display: flex;}
 
 
 #container{
   top:-15%;
-  width: 100vw;
-  height : 100vh;
+  width: 100%;
+  height : 100%;
   margin: 0 auto;
   text-align: center;
 
-
-
 }
-/* effet titre https://codepen.io/gavra/pen/tEpzn*/
+/* effet titre inspiré de https://codepen.io/gavra/pen/tEpzn*/
 h2#typedtext{
   font-family: "Josefin Sans", sans-serif; // police
   font-size: 40px;
   color: #111111;
   display: flex;
-  align-items: flex-start;
-  align-content: center;
   justify-content: center;
   height: 40px;
   position: relative;
@@ -47,84 +42,70 @@ h2#typedtext{
 
 
 
-#images{
+#images{ /*ID images qui regroupe l'ensemble des images*/
   position: relative;
-
   display: flex;
-  align-content: center;
   align-items: center;
   justify-content: center;
   top: 80px;
   height: auto;
-  width: 100vw;
+  width: 100%;
 
 
 }
 
 img.carte2, .carte3, .carte4, .carte1{
   margin: auto;
-  text-align: center;
   position: absolute;
-  vertical-align: middle;
-  width: 100vw;
 
 }
-
+/*Image 4 de fond --> avec animation taille*/
 img.carte4{
-  width: 110vw;
-  //top: -200px;
+  width: 110%;
+  -webkit-animation:augmove 5s infinite;
   display: block;
-  align-content: flex-start;
-  justify-content: center;
   z-index: 1;
 
 }
 
-img.carte3{
-  width: 100vw;
-  //top: -150px;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  z-index: 2;
+@-webkit-keyframes augmove{
+  0% {width: 100%;}
+  50% {width: 120%;}
+  100%{width: 100%;}
 }
 
+
+img.carte3{
+  -webkit-animation:augmove2 6s infinite;
+  z-index: 2;
+}
+@-webkit-keyframes augmove2{
+  0% {width: 90%;}
+  50% {width: 110%;}
+  100%{width: 90%;}
+}
+
+
 img.carte2{
-  width: 90vw;
-  //top: -120px;
-  display: flex;
-  align-content: center;
-  justify-content: center;
+  -webkit-animation:augmove3 5s infinite;
   z-index: 3;
 
 }
+@-webkit-keyframes augmove3{
+  0% {width: 80%;}
+  50% {width: 100%;}
+  100%{width: 80%;}
+}
+@@keyframes augmove3 {
+  0%{width: 80%;}
+  50%{width: 100%;}
+  100%{width: 80%;}
+}
+
 img.carte1{
-  width: 70vw;
-  //top: -100px;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  margin-left: 50;
+  width: 70%;
+  margin-left: 10px;
   z-index: 4;
-
-}
-
-#images{
-  -webkit-animation: 3s ease 0s normal forwards 1 fadein;
-  animation: 3s ease 0s normal forwards 1 fadein;
-}
-
-@keyframes fadein{
-  0%{opacity: 0;}
-  66%{opacity:0,5;}
-  100%{opacity: 1;}
-
-}
-
-@-webkit-keyframes fadein{
-  0%{opacity: 0;}
-  66%{opacity:0,5;}
-  100%{opacity: 1;}
 
 }
 
@@ -140,9 +121,8 @@ img.carte1{
   padding: 0px;
   display: flex;
   align-content: flex-end;
-  justify-content: flex-end;
   justify-content:  space-around;
-  flex-wrap: wrap;
+
 }
 
 .options ul li{
@@ -152,17 +132,14 @@ img.carte1{
   background: -webkit-linear-gradient(0deg, rgba(6,74,111,0.8645833333333334) 0%, rgba(24,36,79,1) 100%);
   background: linear-gradient(0deg, rgba(6,74,111,0.8645833333333334) 0%, rgba(24,36,79,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#064a6f",endColorstr="#18244f",GradientType=1);
-  ox-shadow: 0px 0px 0px #143B64;
   width: 30%;
   padding: 9px;
   border-radius:18px;
   margin-top: 120px;
   font-size: 25px;
   color:#ffffff;
-
   cursor: pointer;
   outline: none;
-  text-align: center;
   z-index: 9;
 }
 
@@ -170,18 +147,12 @@ img.carte1{
 
 #quotes-wrapper{
   display: flex;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
   height: 400px;
   width: 500px;
   margin:50px auto;
-  border-radius: 8px;
-  //padding: 20px;
+  padding: 20px;
   z-index :100 ;
   margin: auto;
-  text-align: center;
-  vertical-align: middle;
   //background-color: white;
 
 }
@@ -189,45 +160,26 @@ img.carte1{
 #quotes{
   font-weight: normal;
   text-align: justify;
-  display: flex;
-  align-items: flex-start;
-  align-content: center;
-  justify-content: center;
   z-index: 7;
   margin: auto;
-
-  vertical-align: middle;
 }
 
-
+/*position du bouton start again  button1 */
 footer{
   position:absolute;
-
   bottom:100px;
-
   width:100%;
-
   padding-top:50px;
-
   height:50px;
-  float: 0;
-  vertical-align: middle;
   display: flex;
-  align-content: center;
   justify-content: center;
   align-items: center;
 
 }
 
 
-/*Bouton d'action (start again !)*/
-.container {
-  width: auto;
-  margin: auto;
-  display: flex;
-  justify-content: center;
+/*Bouton d'action (start again !) = button1*/
 
-}
 /* lien */
 a {
   text-transform: uppercase;
@@ -281,17 +233,13 @@ a {
 #button1 {
   position: relative;
   letter-spacing: 0.20em;
-  margin: 0 auto;
   padding: 1rem 2.5rem;
   background: transparent;
-  outline: none;
   font-size: 20px;
   color: #111111;
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
   border: none;
   z-index: 78;
-  display: inline-block;
-  text-align: center;
 
 }
 #button1::after, #button1::before {
@@ -299,7 +247,7 @@ a {
   position: absolute;
   height: 40%;
   width: 10%;
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); //transition boutons
   z-index: -2;
   border-radius: 50%;
 }
@@ -339,13 +287,9 @@ a {
 /* Formulaire*/
 
 *{
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  outline: none;
   font-family: 'Josefin Sans', sans-serif;
 }
-
 
 
 .wrapper{
@@ -361,9 +305,8 @@ a {
   box-shadow: 4px 4px 2px rgb(169, 234, 254);
   z-index: 25;
 }
-
+/*Titre Formulaire*/
 .wrapper h6{
-  text-align: center;
   margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -436,8 +379,8 @@ a {
   }
   #container{
     top:-15%;
-    width: 100vw;
-    height : 100vh;
+    width: 100%;
+    height : 100%;
     margin: 0 auto;
     text-align: center;
 }
@@ -466,25 +409,25 @@ a {
   }
 
   img.carte4{
-    width: 120vw;
+    width: 120%;
     //top: -200px;
 
   }
 
   img.carte3{
-    width: 110vw;
+    width: 110%;
     //top: -150px;
 
   }
 
   img.carte2{
-    width: 100vw;
+    width: 100%;
     //top: -120px;
 
 
   }
   img.carte1{
-    width: 90vw;
+    width: 90%;
     //top: -100px;
 
   }
@@ -551,8 +494,8 @@ a {
 
   #container{
     top:-15%;
-    width: 100vw;
-    height : 100vh;
+    width: 100%;
+    height : 100%;
     margin: 0 auto;
     text-align: center;
 }
@@ -581,7 +524,7 @@ a {
     align-items: center;
     justify-content: center;
     height: auto;
-    width: 100vw;
+    width: 100%;
     top : -40px;
 
   }
@@ -591,12 +534,12 @@ a {
     text-align: center;
     position: absolute;
     vertical-align: middle;
-    width: 100vw;
+    width: 100%;
 
   }
 
   img.carte4{
-    width: 110vw;
+    width: 110%;
     //top: -200px;
     display: block;
     align-content: flex-start;
@@ -605,8 +548,11 @@ a {
 
   }
 
+
+
+
   img.carte3{
-    width: 100vw;
+    width: 100%;
     //top: -150px;
     display: flex;
     align-content: center;
@@ -615,7 +561,7 @@ a {
   }
 
   img.carte2{
-    width: 90vw;
+    width: 90%;
     //top: -120px;
     display: flex;
     align-content: center;
@@ -624,7 +570,7 @@ a {
 
   }
   img.carte1{
-    width: 75vw;
+    width: 75%;
     //top: -100px;
     display: flex;
     align-content: center;
@@ -633,6 +579,12 @@ a {
     z-index: 4;
 
   }
+
+
+
+
+
+
   /* Quiz */
 
   .buttons .options{
@@ -764,8 +716,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2a8ca7",endCo
 
   #container{
     top:-15%;
-    width: 100vw;
-    height : 100vh;
+    width: 100%;
+    height : 100%;
     margin: 0 auto;
     text-align: center;
 }
@@ -786,7 +738,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2a8ca7",endCo
     align-items: center;
     justify-content: center;
     height: auto;
-    width: 100vw;
+    width: 100%;
     top : -100px;
 }
   /* Quiz */
