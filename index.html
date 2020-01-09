@@ -4,59 +4,49 @@
         <meta charset="utf-8 /">
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
-
         <title>Tronal.Dump</title>
         <script src="https://kit.fontawesome.com/e210289bdc.js" crossorigin="anonymous"></script>
         <meta name="viewport" content="width=device-width,
-        initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+          initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap:400,700" rel="stylesheet">
-
     </head>
 
     <body>
       <div id="container">
         <h2 id= "typedtext"> </h2>
-
-
-
-<!-- Boutons  -->
-
-
-
 <!-- images cartes  et citations-->
-      <section id ="images">
-
+        <section id ="images">
           <img class="carte4" alt="carteUSA4" src="img/Carte_Bleu4_Trump.png">
           <img class="carte3" alt="carteUSA3" src="img/Carte_Bleu3_Trump.png">
           <img class="carte2" alt="carteUSA2" src="img/Carte_Bleu2_Trump.png">
           <img class="carte1" alt="carteUSA1" src="img/Carte_Bleu1_Trump.png">
-
-          <div id = "quotes-wrapper">
-           <div id = "quotes"></div>
-
-        </div>
-
-
-      </section>
-
-
-      <section classe = buttons>
-         <div class="options">
-               <ul id="ul">
-                    <!--    <li id="yes0" onclick="button(this)"></li>
-                        <li id="no1" onclick="button(this)"></li> -->
-               </ul>
-        </div>
-
-
-
-             </section>
+<!-- téléviision mise en forme sur css et citations-->
+          <div id = "tele">
+            <div id = "quotes-wrapper">
+              <div id = "quotes"></div>
+            </div>
+            <div id = "b1">
+              <div id = "b1_1">
+            </div>
+            <div id = "b2"></div>
+            <div id = "b3"></div>
+            <div id = "b4"></div>
+          </div>
+        </section>
+<!-- Boutons  -->
+        <section classe = buttons>
+          <div class="options">
+             <ul id="ul">
+               <li id="yes0" onclick="button(this)"></li>
+               <li id="no1" onclick="button(this)"></li>
+            </ul>
+          </div>
+        </section>
 <!-- Formulaire -->
-      <div class="wrapper">
-        <h6 id = "h5">Add your own quote to the game!</h6>
-        <div id="error_message">
-
+        <div class="wrapper">
+          <h6 id = "h5">Add your own quote to the game!</h6>
+          <div id="error_message">
         </div>
         <form action="/quotes" method="POST" id="myform" onsubmit = "return validate();">
           <div class="input_field">
@@ -64,26 +54,18 @@
           </div>
           <button type="button" id="button">Start again !</button>
         </form>
-      </div>
-
+        </div>
 <!-- Bouton start again -->
         <footer>
-        <!--  <div class="next">
-              <button class="button" onclick="next()" id="button">Start again !</button>
-          </div>-->
           <div id="nextButton"></div>
-
         </footer>
-
 
     </div>
 
 
 
+    <script type="text/javascript" src="main.js"></script>
 
-
-      <script type="text/javascript" src="main.js"></script>
-
-    </body>
+  </body>
 
 </html>

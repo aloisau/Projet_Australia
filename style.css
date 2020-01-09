@@ -12,7 +12,6 @@ body {
     font-weight: bold;
     overflow-x: hidden;
 
-
 }
 
 #citations{display: flex;}
@@ -41,8 +40,8 @@ h2#typedtext{
 }
 
 
-
-#images{ /*ID images qui regroupe l'ensemble des images*/
+/*ID images qui regroupe l'ensemble des images*/
+#images{
   position: relative;
   display: flex;
   align-items: center;
@@ -53,7 +52,7 @@ h2#typedtext{
 
 
 }
-
+/*Superposition des images */
 img.carte2, .carte3, .carte4, .carte1{
   margin: auto;
   position: absolute;
@@ -64,19 +63,19 @@ img.carte4{
   width: 110%;
   -webkit-animation:augmove 5s infinite;
   display: block;
-  z-index: 1;
+  z-index: 1; /*Permet de superposer des "objets" en fonction d'un ordre précis */
 
 }
-
+/*clé pour animer la taille de l'image ici toutes les 5 secondes*/
 @-webkit-keyframes augmove{
   0% {width: 100%;}
-  50% {width: 120%;}
+  60% {width: 120%;}
   100%{width: 100%;}
 }
 
 
 img.carte3{
-  -webkit-animation:augmove2 6s infinite;
+  -webkit-animation:augmove2 5s infinite;
   z-index: 2;
 }
 @-webkit-keyframes augmove2{
@@ -93,14 +92,10 @@ img.carte2{
 }
 @-webkit-keyframes augmove3{
   0% {width: 80%;}
-  50% {width: 100%;}
+  30% {width: 95%;}
   100%{width: 80%;}
 }
-@@keyframes augmove3 {
-  0%{width: 80%;}
-  50%{width: 100%;}
-  100%{width: 80%;}
-}
+
 
 img.carte1{
   width: 70%;
@@ -124,10 +119,10 @@ img.carte1{
   justify-content:  space-around;
 
 }
-
+/*Boutons yes et no cliquables*/
 .options ul li{
   display: inline-block;
-  background: rgb(6,74,111);
+  background: rgb(6,74,111); /*Effet couleur dégradé :*/
   background: -moz-linear-gradient(0deg, rgba(6,74,111,0.8645833333333334) 0%, rgba(24,36,79,1) 100%);
   background: -webkit-linear-gradient(0deg, rgba(6,74,111,0.8645833333333334) 0%, rgba(24,36,79,1) 100%);
   background: linear-gradient(0deg, rgba(6,74,111,0.8645833333333334) 0%, rgba(24,36,79,1) 100%);
@@ -143,32 +138,104 @@ img.carte1{
   z-index: 9;
 }
 
-
-
-#quotes-wrapper{
+#tele{
   display: flex;
-  height: 400px;
-  width: 500px;
-  margin:50px auto;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  height: 370px;
+  width: 520px;
+  margin:90px auto;
+  border-radius: 8px;
   padding: 20px;
   z-index :100 ;
   margin: auto;
-  //background-color: white;
-
+  vertical-align: middle;
+  background-color: #6d451b;
+  border-radius: 50px;
 }
 
+#b1{
+   background-color: #737373;
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   position: relative;
+   top: -54px;
+   right: 10px;
+}
+
+
+#b1_1{
+   background-color: #5c5864;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   position: relative;
+   top:5px;
+   left:5px;
+}
+
+
+#b2,#b3,#b4{  /*caractéristiques communes aux boutons de la tele*/
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   position: relative;
+}
+#b2{
+   background-color: #83c880;
+   top: 40px;
+   right: -5px;
+}
+#b3{
+   background-color: #d79a5a;
+   top: 60px;
+   right: -5px;
+}
+#b4{
+   background-color: #ce6e6e;
+   top: 80px;
+   right: -5px;
+}
+
+/*Fond citations*/
+#quotes-wrapper{
+  display: flex;
+  position: relative;
+  right: 10px;
+  height: 300px;
+  width: 400px;
+  margin:50px auto;
+  border-radius: 8px;
+  padding: 20px;
+  z-index :100 ;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  background-color: white;
+  border-radius: 40px;
+}
+
+/*Citations*/
 #quotes{
   font-weight: normal;
   text-align: justify;
-  z-index: 7;
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: center;
+  z-index: 200;
   margin: auto;
+
+  vertical-align: middle;
 }
 
-/*position du bouton start again  button1 */
+/*position du bouton start again  button1 en pied de page*/
 footer{
   position:absolute;
-  bottom:100px;
-  width:100%;
+  bottom:95px;
+  width:98%;
   padding-top:50px;
   height:50px;
   display: flex;
@@ -201,7 +268,7 @@ a {
 
 @keyframes top {
   from {
-    -webkit-transform: translate(0rem, 0);
+    -webkit-transform: translate(0rem, 0);  /*translate permet de déplacer les éléments dans un espace à deux dimensions  et transform modifie l'espace de coordonnées pour la mise en forme*/
             transform: translate(0rem, 0);
   }
   to {
@@ -233,13 +300,17 @@ a {
 #button1 {
   position: relative;
   letter-spacing: 0.20em;
+  margin: 0 auto;
   padding: 1rem 2.5rem;
   background: transparent;
+  outline: none;
   font-size: 20px;
   color: #111111;
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
   border: none;
   z-index: 78;
+  display: inline-block;
+  text-align: center;
 
 }
 #button1::after, #button1::before {
@@ -247,18 +318,18 @@ a {
   position: absolute;
   height: 40%;
   width: 10%;
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); //transition boutons
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   z-index: -2;
   border-radius: 50%;
 }
-#button1::before {
+#button1::before { /*pseudo élément qui sera le premier enfant de l'élément ciblé, ici button1 : bouton start again*/
   background-color: #255993;
   top: -0.75rem;
   left: 0.5rem;
-  -webkit-animation: top 7s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
+  -webkit-animation: top 7s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate; /*Courbe définie en quatre points pour fluidifier l'animation*/
           animation: top 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
 }
-#button1::after {
+#button1::after { /*pseudo élément qui sera le dernier enfant de l'élément selectionné, ici button1 : bouton start again*/
   background-color: #1D3667;
   top: 3rem;
   left: 13rem;
@@ -268,7 +339,7 @@ a {
 #button1:hover {
   color: white;
 }
-#button1:hover::before, #button1:hover::after {
+#button1:hover::before, #button1:hover::after { /*hover pour que lorsque l'utilisateur passe sa souris sur les points, le bouton se forme*/
   top: 0;
   height: 100%;
   width: 100%;
@@ -283,7 +354,6 @@ a {
   top: 0.5rem;
   left: 0.35rem;
 }
-
 /* Formulaire*/
 
 *{
@@ -291,7 +361,7 @@ a {
   font-family: 'Josefin Sans', sans-serif;
 }
 
-
+/*Contient/ fond du formulaire*/
 .wrapper{
   position: absolute;
   top: 60%;
@@ -308,7 +378,7 @@ a {
 /*Titre Formulaire*/
 .wrapper h6{
   margin-bottom: 10px;
-  text-transform: uppercase;
+  text-transform: uppercase; /*Texte en majuscule*/
   letter-spacing: 1.5px;
   color: #332902;
 }
@@ -317,7 +387,7 @@ a {
   margin-bottom: 10px;
 }
 
-.wrapper .input_field input[type="text"],
+.wrapper .input_field input[type="text"], /*données rentrer dans le champs*/
 .wrapper textarea{
   border: 1px solid #e0e0e0;
   width: 100%;
@@ -329,7 +399,7 @@ a {
   height: 80px;
 }
 
-.wrapper .btn input[type="submit"]{
+.wrapper .btn input[type="submit"]{ /*soumettre la proposition rentrée au préalable*/
   border: none;
   border-color: none;
   margin-top: 15px;
@@ -355,12 +425,97 @@ a {
 }
 
 
+/* 1024 Ipad horizontal */
+@media screen and (max-width: 1024px) {
+
+  body {
+
+      font-size: 25px;
+      letter-spacing: 3px;
+
+  }
 
 
+  /* Quiz */
+
+  .buttons .options{
+    float: center;
+    width: 100%;
+
+  }
+
+  .options ul li{
+
+    width: 40% !important;
+    padding: 9px;
+    border-radius:18px;
+    margin-top: 20px !important;
+    font-size: 30px;
+
+  }
+
+  #tele{
+    margin:180px auto;
+    padding: 20px;
+    height: 400px;
+    width: 600px;
+    z-index :100 ;
+    background-color: #6d451b;
+    border-radius: 50px;
+  }
+
+  #quotes-wrapper{
+    right: 10px;
+    height: 350px;
+    width: 450px;
+  }
+
+  footer{
+    bottom:340px;
+  }
+
+  .button::before {
+    background-color: #18244f;
+    top: -0.75rem;
+    left: 0.5rem;
+    -webkit-animation: top 7s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
+            animation: top 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
+  }
+  .button::after {
+    background-color: #064a6f;
+    top: 3rem;
+    left: 13rem;
+    -webkit-animation: bottom 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
+            animation: bottom 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
+
+}
+
+.wrapper h6{
+  margin-bottom: 15px;
+  text-transform: uppercase; /*Texte en majuscule*/
+  letter-spacing: 1.5px;
+  color: #332902;
+}
+
+
+
+.wrapper{
+  position: absolute;
+  top: 85% !important;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 300px;
+  width: 100%;
+  background: #fff;
+  padding: 30px;
+
+}
+
+}
 
 
 /* 768 Ipad vertical*/
-@media screen and (max-width: 768px){
+@media screen and  (max-width: 768px){
   body {
     background-color: #dff4f4;
     margin: 10px 10px;
@@ -374,9 +529,6 @@ a {
 
   }
 
-
-  #citations{display: flex;
-  }
   #container{
     top:-15%;
     width: 100%;
@@ -432,49 +584,63 @@ a {
 
   }
 
-
   /* Quiz */
-
   .options ul li{
-
     background: rgb(31,106,125);
     background: -moz-linear-gradient(0deg, rgba(31,106,125,1) 0%, rgba(10,85,110,1) 27%, rgba(21,36,80,1) 100%);
     background: -webkit-linear-gradient(0deg, rgba(31,106,125,1) 0%, rgba(10,85,110,1) 27%, rgba(21,36,80,1) 100%);
     background: linear-gradient(0deg, rgba(31,106,125,1) 0%, rgba(10,85,110,1) 27%, rgba(21,36,80,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1f6a7d",endColorstr="#152450",GradientType=1);
-    margin-top: 130px;
-    box-shadow: 0px 0px 0px #143B64;
+    margin-top: 90px;
   }
 
-  #quotes-wrapper{
+  #tele{
+    margin:90px auto;
+    padding: 20px;
+    height: 350px;
+    width: 500px;
+    z-index :100 ;
+    background-color: #6d451b;
+    border-radius: 50px;
+  }
 
-    height: 380px;
-    width: 450px;
+  /*Fond citations*/
+  #quotes-wrapper{
+    right: 10px;
+    height: 280px;
+    width: 380px;
   }
 
   footer{
-    position:absolute;
-    bottom:100px;
-
+    bottom: 60px;
   }
 
   /*Bouton d'action (start again !)*/
-
   .button::before {
     background-color: #1f6a7d;
   }
+
   .button::after {
     background-color: #152450;
-
   }
 
-
-
-
+  .wrapper{
+    position: absolute;
+    top: 88%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 2px rgb(169, 234, 254);
+    z-index: 25;
+  }
 }
 
+
 /* 414 Iphone 6+ vertical */
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 414px ) {
 
   body {
     background-color: #dff4f4;
@@ -484,7 +650,7 @@ a {
 
     overflow-x: hidden;
     font-family: "Josefin Sans", sans-serif;
-    font-size: 15PX;
+    font-size: 15PX !important;
     letter-spacing: 2px;
     font-weight: normal;
     overflow-x: hidden;
@@ -492,182 +658,100 @@ a {
 
   }
 
-  #container{
-    top:-15%;
-    width: 100%;
-    height : 100%;
-    margin: 0 auto;
-    text-align: center;
-}
-
-  /* effet titre https://codepen.io/gavra/pen/tEpzn*/
-  h2#typedtext{
-
-      font-family: "Josefin Sans", sans-serif; // police
-      font-size: 20px;
-      color: #111111;
-      display: flex;
-      align-items: flex-start;
-      align-content: center;
-      justify-content: center;
-      height: 40px;
-      position: relative;
-
-      z-index: 6;
-
-  }
-
   #images{
     position: relative;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
     height: auto;
     width: 100%;
-    top : -40px;
+    top : -15px !important;
 
   }
-
-  img.carte2, .carte3, .carte4, .carte1{
-    margin: auto;
-    text-align: center;
-    position: absolute;
-    vertical-align: middle;
-    width: 100%;
-
-  }
-
-  img.carte4{
-    width: 110%;
-    //top: -200px;
-    display: block;
-    align-content: flex-start;
-    justify-content: center;
-    z-index: 1;
-
-  }
-
-
-
-
-  img.carte3{
-    width: 100%;
-    //top: -150px;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    z-index: 2;
-  }
-
-  img.carte2{
-    width: 90%;
-    //top: -120px;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    z-index: 3;
-
-  }
-  img.carte1{
-    width: 75%;
-    //top: -100px;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    margin-left: 50;
-    z-index: 4;
-
-  }
-
-
-
-
-
 
   /* Quiz */
 
-  .buttons .options{
-    float: center;
-    width: 100%;
-  }
-
-  .options ul{
-    list-style: none;
-    padding: 5px 5px;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    justify-content:  space-around;
-    flex-wrap: wrap;
-  }
-
   .options ul li{
-    display: inline-block;
-    background: rgb(42,140,167);
-background: -moz-linear-gradient(0deg, rgba(42,140,167,0.8645833333333334) 0%, rgba(14,37,105,1) 100%);
-background: -webkit-linear-gradient(0deg, rgba(42,140,167,0.8645833333333334) 0%, rgba(14,37,105,1) 100%);
-background: linear-gradient(0deg, rgba(42,140,167,0.8645833333333334) 0%, rgba(14,37,105,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2a8ca7",endColorstr="#0e2569",GradientType=1);
-    width: 30%;
+
+    width: 30% !important;
     padding: 9px;
     border-radius:18px;
-    margin-top: 100px;
+    margin-top: 10px !important;
     font-size: 15px;
     color:#ffffff;
-
     cursor: pointer;
     outline: none;
     text-align: center;
     z-index: 9;
   }
 
-
-
-  #quotes-wrapper{
+  #tele{
     display: flex;
     align-content: center;
     align-items: center;
     justify-content: center;
-    height: 400px;
-    width: 300px;
-    margin:50px auto;
-    border-radius: 8px;
-    //padding: 20px;
+    height: 250px !important;
+    width: 350px !important;
+    margin:50px auto !important;
+    border-radius: 20px !important;
+    padding: 20px;
     z-index :100 ;
     margin: auto;
-    text-align: center;
     vertical-align: middle;
+    background-color: #6d451b;
+    border-radius: 50px;
+  }
 
+  #b1{
+     background-color: #737373;
+     width: 40px;
+     height: 30px;
+     border-radius: 50%;
+     position: relative;
+     top: -54px;
+     right: 1px;
   }
 
 
+  #b1_1{
+     background-color: #5c5864;
+     width: 20px;
+     height: 20px;
+     border-radius: 50%;
+     position: relative;
+     top:5px;
+     left:5px;
+  }
+
+  /*Fond citations*/
+  #quotes-wrapper{
+    display: flex;
+    position: relative;
+    right: 5px !important;
+    height: 200px !important;
+    width: 350px !important;
+    margin:50px auto;
+  }
+
+  /*position du bouton start again  button1 en pied de page*/
   footer{
     position:absolute;
-
-    bottom:100px;
-
-    width:100%;
-
+    bottom:330px !important;
+    width:98% !important;
     padding-top:50px;
+    height:50px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
   }
 
-
-  /*Bouton d'action (start again !)*/
-
-  /* première étape pour l'animation, */
-
   /* les deux boules animées*/
-  .button {
+  #button1 {
     position: relative;
     letter-spacing: 0.20em;
-    margin: 0 auto;
+    margin: 10px auto;
     padding: 1rem 2.5rem;
     background: transparent;
     outline: none;
-    font-size: 15px;
+    font-size: 20px !important;
     color: #111111;
     transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
     border: none;
@@ -677,241 +761,226 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2a8ca7",endCo
 
   }
 
-  .button::before {
-    background-color: #152450;
-    top: -0.75rem;
-    left: 0.5rem;
-    -webkit-animation: top 7s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
-            animation: top 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
+
+/*Contient/ fond du formulaire*/
+.wrapper{
+  position: absolute;
+  top: 83% !important;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 200px;
+  width: 100%;
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 2px rgb(169, 234, 254);
+  z-index: 25;
+}
+
+}
+
+/* 375 Iphone 6 vertical */
+@media screen and (max-width: 375px) {
+
+  body {
+
+    font-size: 15PX !important;
+    letter-spacing: 1.5px;
+
   }
-  .button::after {
-    background-color: #2a8ca7;
-    top: 3rem;
-    left: 13rem;
-    -webkit-animation: bottom 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
-            animation: bottom 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
+
+
+  /* effet titre https://codepen.io/gavra/pen/tEpzn*/
+  h2#typedtext{
+
+    font-size: 20px;
+  }
+
+  #images{
+    width: 100%;
+    top : 10px !important;
+}
+  /* Quiz */
+  .options ul li{
+    display: inline-block;
+    width: 40% !important;
+    margin-top: 100px !important;
+    font-size: 15px !important;
+
+  }
+
+  #tele{
+
+    height: 200px !important;
+    width: 300px !important;
+    margin:9px auto !important;
+    border-radius: 20px;
+    padding: 20px !important;
+
+  }
+  /*Fond citations*/
+  #quotes-wrapper{
+    display: flex;
+    position: relative;
+    right: 5px !important;
+    height: 170px !important;
+    width: 290px !important;
+    margin:50px auto;
+  }
+
+  /*position du bouton start again  button1 en pied de page*/
+  footer{
+    position:absolute;
+    bottom:320px !important;
+    width:98% !important;
+    padding-top:50px !important;
+    height:50px !important;
+  }
+
+.wrapper{
+  position: absolute;
+  top: 85% !important;
+  left: 50% !important;
+  transform: translate(-50%,-50%);
+  max-width: 200px !important;
+  width: 100% !important;
+  padding: 12px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 2px rgb(169, 234, 254);
+  z-index: 25;
+}
+
+  /* les deux boules animées*/
+  #button1 {
+  position: relative;
+  letter-spacing: 0.20em;
+  margin: 0 auto;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  outline: none;
+  font-size: 15px !important;
+  color: #111111;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
+  border: none;
+  z-index: 78;
+  display: inline-block;
+  text-align: center;
+
+}
 
 
 }
-}
+
+/*FORM basique qu'iol faudrait lier à une autre page ou alors en trouver un autre à utiliser avec l'API*/
+
+
+
 
 /* 320 Iphone 5 vertical */
 @media screen and (max-width: 320px) {
 
   body {
-    background-color: #dff4f4;
-    margin: 10px 10px;
-    padding: 0px;
-    text-align: center;
 
-    overflow-x: hidden;
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 10PX;
+    font-size: 15PX !important;
     letter-spacing: 1.5px;
-    font-weight: normal;
-    overflow-x: hidden;
-
 
   }
 
-  #container{
-    top:-15%;
-    width: 100%;
-    height : 100%;
-    margin: 0 auto;
-    text-align: center;
-}
 
   /* effet titre https://codepen.io/gavra/pen/tEpzn*/
   h2#typedtext{
 
-
-    font-size: 17px;
-
-
+    font-size: 20px;
   }
 
   #images{
-    position: relative;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    height: auto;
     width: 100%;
-    top : -100px;
+    top : 10px !important;
 }
   /* Quiz */
-
-  .options ul{
-    list-style: none;
-    padding: 5px 5px;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    justify-content:  space-around;
-    flex-wrap: wrap;
-  }
-
   .options ul li{
     display: inline-block;
-    background: rgb(42,140,167);
-background: -moz-linear-gradient(0deg, rgba(42,140,167,0.8645833333333334) 0%, rgba(14,37,105,1) 100%);
-background: -webkit-linear-gradient(0deg, rgba(42,140,167,0.8645833333333334) 0%, rgba(14,37,105,1) 100%);
-background: linear-gradient(0deg, rgba(42,140,167,0.8645833333333334) 0%, rgba(14,37,105,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2a8ca7",endColorstr="#0e2569",GradientType=1);
-    width: 30%;
-    padding: 7px;
-    border-radius:18px;
-    margin-top: 70px;
-    font-size: 10px;
-    color:#ffffff;
+    width: 40% !important;
+    margin-top: 50px !important;
+    font-size: 15px !important;
 
-    cursor: pointer;
-    outline: none;
-    text-align: center;
-    z-index: 9;
   }
 
+  #tele{
 
+    height: 200px !important;
+    width: 300px !important;
+    margin:9px auto !important;
+    border-radius: 18px;
+    padding: 20px !important;
 
+  }
+  /*Fond citations*/
   #quotes-wrapper{
-
-    height: 400px;
-    width: 250px;
-
-
+    display: flex;
+    position: relative;
+    right: 5px !important;
+    height: 170px !important;
+    width: 290px !important;
+    margin:50px auto;
   }
 
-
+  /*position du bouton start again  button1 en pied de page*/
   footer{
-
-    bottom:110px;
-
-    width:100%;
-
-    padding-top:50px;
-
+    position:absolute;
+    bottom:240px !important;
+    width:98% !important;
+    padding-top:50px !important;
+    height:50px !important;
   }
 
-
-  /*Bouton d'action (start again !)*/
-
-  /* première étape pour l'animation, */
+.wrapper{
+  position: absolute;
+  top: 85% !important;
+  left: 50% !important;
+  transform: translate(-50%,-50%);
+  max-width: 180px !important;
+  width: 100% !important;
+  padding: 12px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 2px rgb(169, 234, 254);
+  z-index: 25;
+}
 
   /* les deux boules animées*/
-  .button {
-    position: relative;
-    letter-spacing: 0.20em;
-    margin: 0 auto;
-    padding: 1rem 2.5rem;
-    background: transparent;
-    outline: none;
-    font-size: 10px;
-    color: #111111;
-    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
-    border: none;
-    z-index: 78;
-    display: inline-block;
-    text-align: center;
-
-  }
-  .button::after, .button::before {
-    content: "";
-    position: absolute;
-    height: 40%;
-    width: 10%;
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    z-index: -2;
-    border-radius: 50%;
-  }
-
-  .button::before {
-    background-color: #152450;
-    top: -0.75rem;
-    left: 0.5rem;
-    -webkit-animation: top 7s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
-            animation: top 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
-  }
-  .button::after {
-    background-color: #2a8ca7;
-    top: 2rem;
-    left: 13;
-    -webkit-animation: bottom 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
-            animation: bottom 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
-
-
-    }
-    .button:hover {
-      color: white;
-    }
-    .button:hover::before, .button:hover::after {
-      top: 0;
-      height: 100%;
-      width: 100%;
-      border-radius: 18px;
-      -webkit-animation: none;
-          animation: none;
-      }
-      .button:hover::after {
-        left: 0rem;
-      }
-      .button:hover::before {
-        top: 0.5rem;
-        left: 0.35rem;
-      }
-}
-
-
-/* 1024 Ipad horizontal */
-@media screen and (max-width: 1024px) {
-
-
-  /* Quiz */
-
-  .buttons .options{
-    float: center;
-    width: 100%;
-  }
-
-  .options ul li{
-    display: inline-block;
-    background: rgb(6,74,111);
-    background: -moz-linear-gradient(0deg, rgba(6,74,111,0.8645833333333334) 0%, rgba(24,36,79,1) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(6,74,111,0.8645833333333334) 0%, rgba(24,36,79,1) 100%);
-    background: linear-gradient(0deg, rgba(6,74,111,0.8645833333333334) 0%, rgba(24,36,79,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#064a6f",endColorstr="#18244f",GradientType=1);
-    ox-shadow: 0px 0px 0px #143B64;
-
-  }
-
-
-
-
-  footer{
-
-
-    bottom:40px;
-
-
-  }
-
-  .button::before {
-    background-color: #18244f;
-    top: -0.75rem;
-    left: 0.5rem;
-    -webkit-animation: top 7s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
-            animation: top 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
-  }
-  .button::after {
-    background-color: #064a6f;
-    top: 3rem;
-    left: 13rem;
-    -webkit-animation: bottom 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
-            animation: bottom 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
+  #button1 {
+  position: relative;
+  letter-spacing: 0.20em;
+  margin: 0 auto;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  outline: none;
+  font-size: 15px !important;
+  color: #111111;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
+  border: none;
+  z-index: 78;
+  display: inline-block;
+  text-align: center;
 
 }
+
+#button1::after, #button1::before {
+  content: "";
+  position: absolute;
+  height: 0%;
+  width: 0%;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -2;
+  border-radius: 50%;
+}
+#button1::before { /*pseudo élément qui sera le premier enfant de l'élément ciblé, ici button1 : bouton start again*/
+  background-color: transparent;
+}
+#button1::after { /*pseudo élément qui sera le dernier enfant de l'élément selectionné, ici button1 : bouton start again*/
+  background-color: transparent;
+}
+
 }
 
 /*FORM basique qu'iol faudrait lier à une autre page ou alors en trouver un autre à utiliser avec l'API*/
